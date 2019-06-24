@@ -15,7 +15,9 @@
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-decorators": "^7.4.4",
+    "csvtojson": "^2.0.8",
     "eslint": "^5.16.0",
+    "lodash": "^4.17.11",
     "nodemon": "^1.19.0"
   },
   "dependencies": {

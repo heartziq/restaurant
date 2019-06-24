@@ -1,8 +1,13 @@
 import { configure, observable, computed, action } from "mobx";
+import moment from 'moment';
 
 import * as api from "../src/api";
 
-const { filterOpenNow, openAtDay, opensAfter } = require("./driver");
+const {
+  filterOpenNow,
+  openAtDay,
+  opensAfter,
+  convertTo24 } = require("./driver");
 
 class DateOps {
   // List of Restaurant
@@ -11,6 +16,8 @@ class DateOps {
   // filter variables
   @observable filter = "";
   @observable day = "";
+
+  // pass time heref
   @observable time = "";
 
   // email and password
@@ -43,23 +50,25 @@ class DateOps {
   }
 
   get filterRestaurant() {
-    // if user selects back '', filter restart to all
-    // if (this.day === 'All') {
-    //   console.log('this pass!')
-    //   this.ultimateFilter = this.restaurant;
-    // }
 
-    // if (this.day !== '' && this.day !== 'All') {
-    //   this.ultimateFilter = openAtDay(this.restaurant, this.day)
-    //                               .filter(e => e.name.toLowerCase().includes(this.filter))
+    const { hour, minute } = this.time;
+    const now = moment({ hour, minute }).format();
 
-    //   return this.ultimateFilter;
-    // }
-
-    // return this.ultimateFilter.filter(e => e.name.toLowerCase().includes(this.filter))
-    return openAtDay(this.restaurant, this.day).filter(e =>
-      e.name.toLowerCase().includes(this.filter)
-    );
+    return openAtDay(this.restaurant, this.day)
+      .filter(e => {
+        for (let each of e.open) {
+          const { hour: hourEnd, minute: minuteEnd } = convertTo24(
+            each.time.closeAt
+          );
+          if (now < moment({ hour: hourEnd, minute: minuteEnd }).format()) {
+            return true;
+          }
+            
+        }
+      })
+      .filter(e =>
+        e.name.toLowerCase().includes(this.filter)
+      );
   }
 
   set filter(text) {

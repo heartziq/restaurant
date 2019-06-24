@@ -39,3 +39,10 @@ export const login = async (email, pwd) => {
     console.log('Login Failed')
   }
 }
+
+// export const getCollection = async userId => {
+//   const response = fetch(`/api/collection/${userId}`, {
+
+//   });
+
+// }

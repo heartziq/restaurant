@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import Router from 'next/router';
 import axios from 'axios';
 
-import MyRestaurant from '../data';
+import MyRestaurant from '../data/dateOps';
 import * as api from '../src/api';
 
 const myRestaurant = new MyRestaurant();
@@ -27,7 +27,8 @@ class Login extends React.Component {
         const data = await response.json();
     
         document.cookie=`token=${data.token}`;
-        document.cookie=`user=${data.user}`;
+        document.cookie=`user=${data.name}`;
+        document.cookie=`userId=${data.userId}`
         
         console.log('running Router push')
         Router.push('/collection')

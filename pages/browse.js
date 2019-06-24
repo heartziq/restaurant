@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import Restaurant from "../src/components/Restaurant";
-import Head from "../src/components/Head";
-import styled from "styled-components";
-import $ from "jquery";
 import nextCookies from "next-cookies";
 import Link from "next/link";
 
-import DateOps from "../data";
+// sub-components
+import Restaurant from "../src/components/Restaurant";
+
+// styling
+import Head from "../src/components/Head";
+import styled from "styled-components";
+import $ from "jquery";
+
+import DateOps from "../data/";
 
 const myStore = new DateOps();
 
@@ -94,7 +98,8 @@ class MyApp extends Component {
   };
 
   handleTimeSelect = (hour, minute) => {
-    console.log(hour, minute);
+    myStore.time = {hour, minute};
+    console.log(`myStore.time:${myStore.time.hour}, ${myStore.time.minute}`)
   };
 
   render() {
@@ -114,6 +119,7 @@ class MyApp extends Component {
       myStore.restaurant.length > 0
         ? myStore.filterRestaurant
         : this.props.restaurant;
+
 
     return (
       <div className="container-fluid">
@@ -137,7 +143,7 @@ class MyApp extends Component {
             <div className="col s1">
               <div className="row">
                 <i className="userIcon material-icons prefix">person</i>
-                <p className="greetings">Hi, {this.props.user}</p>
+                <p className="greetings">Hi, {this.props.user || "Guest"}</p>
                 <Link href="/collection">
                   <a className="nav-link">view collection</a>
                 </Link>

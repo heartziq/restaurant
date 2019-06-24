@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const { verify } = require("./middleware");
+const { populateRestaurant } = require('../test')
 
 const { filterOpenNow, openAtDay, opensAfter } = require("../data/driver");
 
@@ -25,6 +26,11 @@ MongoClient.connect(mongoUri, { useNewUrlParser: true }, (err, client) => {
   target = client.db("test").collection("restaurant");
   User = client.db("test").collection("user");
   Collection = client.db("test").collection("collection");
+});
+
+app.get('/restrest', async (req, res) => {
+  const data = await populateRestaurant();
+  res.json({data});
 });
 
 app.get("/", (req, res) => {
@@ -83,8 +89,6 @@ app.post("/login", (req, res) => {
 app.get('/collection/:userId', async (req, res) => {
   // retrieve collection ids from user_table
   console.log(`param userId:${req.params.userId}`)
-
-
 
   const response = await User.findOne({ _id: ObjectID(req.params.userId) }, {projection: {collection: 1, _id: 0}})
   const collection_id = await response.collection.map(_id => Object.assign({}, {_id: ObjectID(_id)}));
