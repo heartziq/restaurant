@@ -38,6 +38,8 @@ Run app
 $ yarn start
 ```
 
+Go to http://localhost:3000/
+
 2 users accounts are provided:
 
 1. mike@gmail.com
