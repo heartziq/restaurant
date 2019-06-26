@@ -67,47 +67,53 @@ const MainHeaderStyle = styled.div`
 class Collection extends Component {
   // Uncomment for testing UI
 
-  // static async getInitialProps(ctx) {
-  //   // strip token
-  //   let { token, user, userId } = nextCookies(ctx);
+  static async getInitialProps(ctx) {
+    // strip token
+    let { token, user, userId } = nextCookies(ctx);
 
-  //   if (!token) Router.push("/login");
+    if (!token) Router.push("/login");
 
-  //   token = `Bearer ${token}`;
+    token = `Bearer ${token}`;
 
-  //   // For Logging purposes
+    // For Logging purposes
 
-  //   // console.log(`token:${token}`)
-  //   // console.log(`user:${user}`);
-  //   // console.log(`userId:${userId}`)
+    console.log(`token:${token}`)
+    console.log(`user:${user}`);
+    console.log(`userId:${userId}`)
 
-  //   // set api endpoint
-  //   // http://localhost:3000/api/collection/5cef8bcabc8ca03b806534ff
-  //   const apiUrl = `http://localhost:3000/api/collection/${userId}`;
+    // set api endpoint
+    // http://localhost:3000/api/collection/5cef8bcabc8ca03b806534ff
+    const apiUrl = `http://localhost:3000/api/collection/${userId}`;
 
-  //   // inject in header
-  //   try {
-  //     const response = await fetch(apiUrl);
-  //     if (response.ok) {
-  //       console.log("it GOES HERE");
-  //       // console.log(`return: ${JSON.stringify(response.json())}`)
-  //       return await response.json();
-  //     } else {
-  //       // suspect: redirect only happens here
-  //       // https://github.com/developit/unfetch#caveats
-  //       console.log("response is NOT ok =( #1");
-  //       Router.push("/login");
-  //     }
-  //   } catch (error) {
-  //     // Implementation or Network error
-  //     console.log("response is NOT ok =( #2", error);
+    // inject in header
+    try {
+      const response = await fetch(apiUrl, {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: JSON.stringify({ token })
+        }
+      });
+      if (response.ok) {
+        console.log("it GOES HERE");
+        // console.log(`return: ${JSON.stringify(response.json())}`)
+        return await response.json();
+      } else {
+        // suspect: redirect only happens here
+        // https://github.com/developit/unfetch#caveats
+        console.log("response is NOT ok =( #1");
+        Router.push("/login");
+      }
+    } catch (error) {
+      // Implementation or Network error
+      console.log("response is NOT ok =( #2", error);
 
-  //     Router.push("/login");
-  //   }
-  // }
+      Router.push("/login");
+    }
+  }
 
   render() {
-    // console.log(`props: ${JSON.stringify(this.props)}`);
+    
     return (
       <div className="CollectionPage">
         <Head title={"collection"} />
@@ -128,9 +134,7 @@ class Collection extends Component {
             </form>
           </MainHeaderStyle>
         <div className="row">
-          <SingleCollection />
-          <SingleCollection />
-          <SingleCollection />
+          {this.props.data.map(c => <SingleCollection {...c}/>)}
         </div>
       </div>
     );

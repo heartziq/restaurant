@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+// date helper
+import { getDayFromNumber } from "../../data/driver";
+import { getFormattedDays } from '../../test';
+
 const EachRestaurant = styled.li`
   .details {
     font-size: 10px;
@@ -12,19 +16,30 @@ const EachRestaurant = styled.li`
   }
 `;
 
-export default () => (
-  <EachRestaurant className="collection-item">
-    <h5>Mom's Bakery</h5>
-    <a href="#!" class="secondary-content">
-      <i className="material-icons">cancel</i>
-    </a>
-    <div className="details">
-      <i className="material-icons">calendar_today</i> Mon-Thu
-      <i className="material-icons">access_time</i> 12:30 pm - 1:00 pm
-      <br />
-      <i className="material-icons">calendar_today</i> Fri-Sun
-      <i className="material-icons">access_time</i> 1:30 pm - 7:00 pm
+const displayDetails = openList => {
+  return openList.open.map(eachOpen => (
+    <div className="row">
+      <i className="material-icons">calendar_today</i>
+      <span>{getFormattedDays(getDayFromNumber(...eachOpen.day))}</span>
+      <i className="material-icons">access_time</i>{eachOpen.time.openAt} - {eachOpen.time.closeAt}
       <br />
     </div>
-  </EachRestaurant>
-);
+  ));
+};
+
+export default (oneRestaurant) => {
+
+  console.log(`SingleRestaurant.c -> ${JSON.stringify(oneRestaurant)}`)
+
+  return (
+    <EachRestaurant className="collection-item">
+      <h5>{oneRestaurant.name}</h5>
+      <a href="#!" class="secondary-content">
+        <i className="material-icons">cancel</i>
+      </a>
+      <div className="details">
+        {/* { displayDetails(oneRestaurant) } */}
+      </div>
+    </EachRestaurant>
+  )
+}

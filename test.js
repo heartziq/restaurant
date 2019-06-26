@@ -88,15 +88,13 @@ const getFormattedDays = arrayOfDays => {
 
   // e.g. reduced = 'MonTueWed, Sun'
   // Need to truncate MonTueWed to Mon-Wed
-
-  console.log(`reduced:${reduced}`)
   if (reduced.includes(',')) {
     const [fJoin, unJoin] = [...reduced.split(',')];
   
     const many = reduced.match(/([A-Z][a-z]{2}){2,}/g)[0];
     const oneDay = reduced.match(/((,)\s[A-Z][a-z]{2})|^[A-Z][a-z]{2}(,)/g)[0];
     
-    return truncateDays(many).concat(', ', oneDay);
+    return truncateDays(many).concat(oneDay);
   }
 
   return truncateDays(reduced);

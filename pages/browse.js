@@ -53,7 +53,6 @@ class MyApp extends Component {
     const { token, user } = nextCookies(ctx);
 
     // get cookie (user)'
-    // console.log(`Index.js token: ${token} username: ${user}`)
 
     return { restaurant: data, user };
   }

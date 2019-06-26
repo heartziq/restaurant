@@ -12,6 +12,7 @@ const {
 class DateOps {
   // List of Restaurant
   @observable restaurant = [];
+  @observable collection = {};
 
   // filter variables
   @observable filter = "";
@@ -47,6 +48,25 @@ class DateOps {
         console.error(err);
       })
     );
+  }
+
+  @action
+  fetchCollection(collectionName, listId) {
+  
+    this.collection[collectionName] = [];
+    listId.map(id => {
+      api.getSingleRestaurant(id)
+        .then(
+          action(resp => {
+            console.log(`resp: ${JSON.stringify(resp)}`)
+            this.collection[collectionName].push(resp);
+          }),
+          action(err => {
+            console.error(err);
+          })
+        )
+      }
+    )
   }
 
   get filterRestaurant() {

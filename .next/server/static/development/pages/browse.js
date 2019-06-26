@@ -372,16 +372,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/initializerDefineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/initializerDefineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/applyDecoratedDescriptor */ "./node_modules/@babel/runtime-corejs2/helpers/esm/applyDecoratedDescriptor.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_initializerWarningHelper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/initializerWarningHelper */ "./node_modules/@babel/runtime-corejs2/helpers/esm/initializerWarningHelper.js");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mobx */ "mobx");
-/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(mobx__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _src_api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../src/api */ "./src/api.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/initializerDefineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/initializerDefineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/applyDecoratedDescriptor */ "./node_modules/@babel/runtime-corejs2/helpers/esm/applyDecoratedDescriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_initializerWarningHelper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/initializerWarningHelper */ "./node_modules/@babel/runtime-corejs2/helpers/esm/initializerWarningHelper.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! mobx */ "mobx");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(mobx__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "moment");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _src_api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../src/api */ "./src/api.js");
 
 
 
@@ -390,7 +392,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _temp;
+
+var _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _temp;
 
 
 
@@ -410,23 +413,25 @@ function () {
   // pass time heref
   // email and password
   function DateOps() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, DateOps);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, DateOps);
 
-    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "restaurant", _descriptor, this);
+    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "restaurant", _descriptor, this);
 
-    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "filter", _descriptor2, this);
+    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "collection", _descriptor2, this);
 
-    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "day", _descriptor3, this);
+    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "filter", _descriptor3, this);
 
-    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "time", _descriptor4, this);
+    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "day", _descriptor4, this);
 
-    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "user", _descriptor5, this);
+    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "time", _descriptor5, this);
+
+    Object(_babel_runtime_corejs2_helpers_esm_initializerDefineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "user", _descriptor6, this);
 
     // serves as a copy - restaurant still doesnt change
     this.ultimateFilter = [];
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(DateOps, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(DateOps, [{
     key: "resetFilter",
     value: function resetFilter() {
       this.ultimateFilter = this.restaurant;
@@ -436,23 +441,39 @@ function () {
     value: function fetchProjects() {
       var _this = this;
 
-      _src_api__WEBPACK_IMPORTED_MODULE_9__["fetchAll"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_7__["action"])(function (resp) {
+      _src_api__WEBPACK_IMPORTED_MODULE_10__["fetchAll"]().then(Object(mobx__WEBPACK_IMPORTED_MODULE_8__["action"])(function (resp) {
         // data is here
         _this.restaurant = resp;
         _this.ultimateFilter = _this.restaurant;
-      }), Object(mobx__WEBPACK_IMPORTED_MODULE_7__["action"])(function (err) {
+      }), Object(mobx__WEBPACK_IMPORTED_MODULE_8__["action"])(function (err) {
         console.error(err);
       }));
     }
   }, {
+    key: "fetchCollection",
+    value: function fetchCollection(collectionName, listId) {
+      var _this2 = this;
+
+      this.collection[collectionName] = [];
+      listId.map(function (id) {
+        _src_api__WEBPACK_IMPORTED_MODULE_10__["getSingleRestaurant"](id).then(Object(mobx__WEBPACK_IMPORTED_MODULE_8__["action"])(function (resp) {
+          console.log("resp: ".concat(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_2___default()(resp)));
+
+          _this2.collection[collectionName].push(resp);
+        }), Object(mobx__WEBPACK_IMPORTED_MODULE_8__["action"])(function (err) {
+          console.error(err);
+        }));
+      });
+    }
+  }, {
     key: "filterRestaurant",
     get: function get() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _this$time = this.time,
           hour = _this$time.hour,
           minute = _this$time.minute;
-      var now = moment__WEBPACK_IMPORTED_MODULE_8___default()({
+      var now = moment__WEBPACK_IMPORTED_MODULE_9___default()({
         hour: hour,
         minute: minute
       }).format();
@@ -469,7 +490,7 @@ function () {
                 hourEnd = _convertTo.hour,
                 minuteEnd = _convertTo.minute;
 
-            if (now < moment__WEBPACK_IMPORTED_MODULE_8___default()({
+            if (now < moment__WEBPACK_IMPORTED_MODULE_9___default()({
               hour: hourEnd,
               minute: minuteEnd
             }).format()) {
@@ -491,7 +512,7 @@ function () {
           }
         }
       }).filter(function (e) {
-        return e.name.toLowerCase().includes(_this2.filter);
+        return e.name.toLowerCase().includes(_this3.filter);
       });
     }
   }, {
@@ -507,35 +528,42 @@ function () {
   }]);
 
   return DateOps;
-}(), _temp), (_descriptor = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__["default"])(_class.prototype, "restaurant", [mobx__WEBPACK_IMPORTED_MODULE_7__["observable"]], {
+}(), _temp), (_descriptor = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "restaurant", [mobx__WEBPACK_IMPORTED_MODULE_8__["observable"]], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: function initializer() {
     return [];
   }
-}), _descriptor2 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__["default"])(_class.prototype, "filter", [mobx__WEBPACK_IMPORTED_MODULE_7__["observable"]], {
+}), _descriptor2 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "collection", [mobx__WEBPACK_IMPORTED_MODULE_8__["observable"]], {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  initializer: function initializer() {
+    return {};
+  }
+}), _descriptor3 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "filter", [mobx__WEBPACK_IMPORTED_MODULE_8__["observable"]], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: function initializer() {
     return "";
   }
-}), _descriptor3 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__["default"])(_class.prototype, "day", [mobx__WEBPACK_IMPORTED_MODULE_7__["observable"]], {
+}), _descriptor4 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "day", [mobx__WEBPACK_IMPORTED_MODULE_8__["observable"]], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: function initializer() {
     return "";
   }
-}), _descriptor4 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__["default"])(_class.prototype, "time", [mobx__WEBPACK_IMPORTED_MODULE_7__["observable"]], {
+}), _descriptor5 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "time", [mobx__WEBPACK_IMPORTED_MODULE_8__["observable"]], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: function initializer() {
     return "";
   }
-}), _descriptor5 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__["default"])(_class.prototype, "user", [mobx__WEBPACK_IMPORTED_MODULE_7__["observable"]], {
+}), _descriptor6 = Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "user", [mobx__WEBPACK_IMPORTED_MODULE_8__["observable"]], {
   configurable: true,
   enumerable: true,
   writable: true,
@@ -545,7 +573,7 @@ function () {
       pwd: '123456'
     };
   }
-}), Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_5__["default"])(_class.prototype, "fetchProjects", [mobx__WEBPACK_IMPORTED_MODULE_7__["action"]], _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(_class.prototype, "fetchProjects"), _class.prototype)), _class);
+}), Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "fetchProjects", [mobx__WEBPACK_IMPORTED_MODULE_8__["action"]], _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(_class.prototype, "fetchProjects"), _class.prototype), Object(_babel_runtime_corejs2_helpers_esm_applyDecoratedDescriptor__WEBPACK_IMPORTED_MODULE_6__["default"])(_class.prototype, "fetchCollection", [mobx__WEBPACK_IMPORTED_MODULE_8__["action"]], _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(_class.prototype, "fetchCollection"), _class.prototype)), _class);
 /* harmony default export */ __webpack_exports__["default"] = (DateOps);
 
 /***/ }),
@@ -2077,7 +2105,6 @@ function (_Component) {
                 // pass initial data here
                 data = ctx.query.initialData;
                 _nextCookies = next_cookies__WEBPACK_IMPORTED_MODULE_11___default()(ctx), token = _nextCookies.token, user = _nextCookies.user; // get cookie (user)'
-                // console.log(`Index.js token: ${token} username: ${user}`)
 
                 return _context.abrupt("return", {
                   restaurant: data,
@@ -2111,13 +2138,14 @@ function (_Component) {
 /*!********************!*\
   !*** ./src/api.js ***!
   \********************/
-/*! exports provided: fetchAll, login */
+/*! exports provided: fetchAll, login, getSingleRestaurant */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAll", function() { return fetchAll; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSingleRestaurant", function() { return getSingleRestaurant; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
@@ -2148,12 +2176,7 @@ var fetchAll = function fetchAll() {
       reject(new Error('error fetching data...'));
     }
   });
-}; // export const login = (email, pwd) => {
-//   return axios.post('/api/login', {email, pwd})
-//         .then(resp => resp.data)
-//         .catch(err => err.stack)
-// }
-
+};
 var login =
 /*#__PURE__*/
 function () {
@@ -2210,10 +2233,19 @@ function () {
   return function login(_x, _x2) {
     return _ref.apply(this, arguments);
   };
-}(); // export const getCollection = async userId => {
-//   const response = fetch(`/api/collection/${userId}`, {
-//   });
-// }
+}();
+var getSingleRestaurant = function getSingleRestaurant(id) {
+  return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_3___default.a(function (resolve, reject) {
+    try {
+      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("/api/".concat(id)).then(function (resp) {
+        console.log("data: ".concat(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(resp.data)));
+        resolve(resp.data);
+      });
+    } catch (_unused2) {
+      reject(new Error('error fetching data...'));
+    }
+  });
+};
 
 /***/ }),
 
@@ -2496,8 +2528,6 @@ var getFormattedDays = function getFormattedDays(arrayOfDays) {
   }, ''); // e.g. reduced = 'MonTueWed, Sun'
   // Need to truncate MonTueWed to Mon-Wed
 
-  console.log("reduced:".concat(reduced));
-
   if (reduced.includes(',')) {
     var _ref3 = (0, _toConsumableArray2.default)(reduced.split(',')),
         fJoin = _ref3[0],
@@ -2505,7 +2535,7 @@ var getFormattedDays = function getFormattedDays(arrayOfDays) {
 
     var many = reduced.match(/([A-Z][a-z]{2}){2,}/g)[0];
     var oneDay = reduced.match(/((,)\s[A-Z][a-z]{2})|^[A-Z][a-z]{2}(,)/g)[0];
-    return truncateDays(many).concat(', ', oneDay);
+    return truncateDays(many).concat(oneDay);
   }
 
   return truncateDays(reduced);

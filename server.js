@@ -16,10 +16,6 @@ app
     const server = express();
     server.use('/api', apiRouter);
 
-    server.get('/lol', (req, res) => {
-      res.send('lolback')
-    })
-
     server.get('/collection', verify, (req, res) => {
       // just display dummy data for now
       res.json({"msg": "hey"})

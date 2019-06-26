@@ -15,12 +15,6 @@ export const fetchAll = () => {
   })
 }
 
-// export const login = (email, pwd) => {
-//   return axios.post('/api/login', {email, pwd})
-//         .then(resp => resp.data)
-//         .catch(err => err.stack)
-// }
-
 export const login = async (email, pwd) => {
   const response = await fetch('/api/login', {
     method: 'POST',
@@ -40,9 +34,16 @@ export const login = async (email, pwd) => {
   }
 }
 
-// export const getCollection = async userId => {
-//   const response = fetch(`/api/collection/${userId}`, {
-
-//   });
-
-// }
+export const getSingleRestaurant = (id) => {
+  return new Promise((resolve, reject) => {
+    try {
+      axios.get(`/api/${id}`)
+            .then(resp => {
+              console.log(`data: ${JSON.stringify(resp.data)}`)
+              resolve(resp.data)
+            })
+    } catch {
+      reject(new Error('error fetching data...'))
+    }
+  })
+}

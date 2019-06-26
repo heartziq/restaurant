@@ -47,10 +47,10 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/:restaurant", (req, res) => {
-  const restaurantName = req.params.restaurant;
+app.get("/:restaurantId", (req, res) => {
+  const id = req.params.restaurantId;
   target
-    .findOne({ name: restaurantName })
+    .findOne({ _id: ObjectID(id) })
     .then(resp => res.send(resp))
     .catch(err => console.error(err.stack));
 });
@@ -72,7 +72,7 @@ app.post("/login", (req, res) => {
             { email: resp.email, user: resp.name },
             "shhh",
             (err, token) => {
-              res.json({ token, user: resp.name });
+              res.json({ token, user: resp.name, userId: resp._id });
             }
           );
         } else {
@@ -86,14 +86,11 @@ app.post("/login", (req, res) => {
 });
 
 // for testing purpose, EXCLUDE verify middleware
-app.get('/collection/:userId', async (req, res) => {
+app.get('/collection/:userId', verify, async (req, res) => {
   // retrieve collection ids from user_table
-  console.log(`param userId:${req.params.userId}`)
 
   const response = await User.findOne({ _id: ObjectID(req.params.userId) }, {projection: {collection: 1, _id: 0}})
   const collection_id = await response.collection.map(_id => Object.assign({}, {_id: ObjectID(_id)}));
-
-  // res.json(collection_id)
 
   const criteria = { $or: collection_id }
 
@@ -104,9 +101,18 @@ app.get('/collection/:userId', async (req, res) => {
       collection.push(item);
     })
     .then(() => {
-      res.send(collection);
+      // console.log(`collection: ${JSON.stringify(collection)}`)
+      res.send({data: collection});
     });
 
 });
 
 module.exports = app;
+
+// 5d10ee3c3cd25e119a5e26cb
+
+// 5d10ee3c3cd25e119a5e26cc
+
+// 5d10ee3c3cd25e119a5e26d8
+
+// 5d10ee3c3cd25e119a5e26dc

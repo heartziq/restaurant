@@ -6,13 +6,10 @@ const verify = (req, res, next) => {
     res.end();
     return
   }
-  // console.log(`req.headers.authorization: ${req.headers.authorization}`)
-  // const token = getJustToken(JSON.parse(req.headers.authorization));
+
   const { token } = JSON.parse(req.headers.authorization);
   
   try {
-    console.log(`full token:${token}`);
-    console.log(`getJustToken: ${getJustToken(token)}`)
     const decoded = jwt.verify(getJustToken(token), 'shhh');
     res.decoded = decoded;
     next();
